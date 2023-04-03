@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { HiMenuAlt4, HiX } from "react-icons/hi";
 import { motion } from "framer-motion";
 import Logo from "../../assets/react.svg";
-
 import "./Navbar.scss";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../utils/auth";
@@ -14,6 +13,7 @@ const Navbar = () => {
   const handleLogout = () => {
     Navigate("/login");
     auth.logout(false);
+    localStorage.removeItem("user")
   };
   return (
     <nav className="app__navbar">

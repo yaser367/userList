@@ -19,6 +19,7 @@ const Login = () => {
       setUser(true);
       Navigate("/", { replace: true });
       auth.login(true);
+      localStorage.setItem("user", true);
     } else {
       setUser(false);
       toast.error("Incorrect Username and password");
